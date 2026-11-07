@@ -215,6 +215,65 @@ section{padding:70px 0}
   }
 }
 
+
+/* FINAL POLISH: promo typography/position and mobile header-to-hero spacing */
+@media (min-width: 851px) {
+  .hero .promo-float {
+    bottom: 122px !important;
+    padding: 16px 25px 16px 18px !important;
+    gap: 14px !important;
+  }
+  .hero .promo-float-copy strong {
+    font-size: 19px !important;
+    letter-spacing: 1px !important;
+  }
+  .hero .promo-float-copy span {
+    font-size: 11px !important;
+    letter-spacing: 1.15px !important;
+  }
+}
+@media (min-width: 601px) and (max-width: 850px) {
+  .hero .promo-float {
+    bottom: 92px !important;
+    padding: 13px 18px 13px 14px !important;
+  }
+  .hero .promo-float-copy strong { font-size: 16px !important; }
+  .hero .promo-float-copy span { font-size: 9px !important; }
+}
+@media (max-width: 600px) {
+  /* Keep the brand/booking header clearly above the eyebrow, without a tall blank gap. */
+  .hero {
+    align-items: flex-start !important;
+    padding-top: 145px !important;
+    padding-bottom: 145px !important;
+    min-height: 760px !important;
+  }
+  .hero-content {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    margin-top: 0 !important;
+  }
+  .hero .eyebrow { margin-bottom: 10px !important; }
+  .hero .promo-float {
+    bottom: 54px !important;
+    padding: 11px 13px 11px 12px !important;
+    gap: 8px !important;
+  }
+  .hero .promo-float-copy strong {
+    font-size: 13px !important;
+    letter-spacing: .45px !important;
+  }
+  .hero .promo-float-copy span {
+    font-size: 7.5px !important;
+    letter-spacing: .1px !important;
+  }
+}
+@media (max-width: 380px) {
+  .hero { padding-top: 136px !important; }
+  .hero .promo-float { bottom: 48px !important; }
+}
+
 </style>
 </head>
 <body>
