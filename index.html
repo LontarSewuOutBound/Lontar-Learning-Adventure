@@ -1,620 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lontar Learning Adventure - Wisata edukasi, petualangan, dan pengalaman belajar menyenangkan di Lontar Sewu, Gresik.">
-  <title>Lontar Learning Adventure | Lontar Sewu</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --green: #174d35;
-      --green-dark: #103b29;
-      --lime: #d8ed9b;
-      --cream: #f8f8ef;
-      --orange: #ed9b43;
-      --text: #25372d;
-      --muted: #718076;
-      --white: #fff;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.6;
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    .container {
-      width: min(1160px, 90%);
-      margin: auto;
-    }
-
-    header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-      padding: 22px 0;
-      color: white;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 19px;
-      font-weight: 800;
-      letter-spacing: -.5px;
-    }
-
-    .brand-icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--lime);
-      color: var(--green);
-      font-size: 22px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover { color: var(--lime); }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 23px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 14px;
-      transition: .25s;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--lime);
-      color: var(--green-dark);
-    }
-
-    .btn-primary:hover {
-      background: white;
-      transform: translateY(-3px);
-    }
-
-    .btn-green {
-      background: var(--green);
-      color: white;
-    }
-
-    .btn-green:hover {
-      background: var(--green-dark);
-      transform: translateY(-3px);
-    }
-
-   .hero {
-  min-height: 720px;
-  display: flex;
-  align-items: center;
-  color: white;
-  background:
-    linear-gradient(90deg, rgba(10,39,26,.88), rgba(10,39,26,.35)),
-    url('assets/images/6300594887707006050.jpg') center/cover;
-  padding: 150px 0 100px;
-}
-
-    .hero-content { max-width: 690px; }
-
-    .eyebrow {
-      display: inline-block;
-      color: var(--lime);
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    h1, h2, h3 { line-height: 1.2; }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(43px, 7vw, 76px);
-      margin-bottom: 22px;
-    }
-
-    .hero p {
-      max-width: 560px;
-      font-size: 17px;
-      color: #edf2e9;
-      margin-bottom: 32px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 13px;
-      flex-wrap: wrap;
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,.7);
-      color: white;
-    }
-
-    .btn-outline:hover { background: white; color: var(--green); }
-
-    section { padding: 95px 0; }
-
-    .section-heading {
-      max-width: 650px;
-      margin-bottom: 45px;
-    }
-
-    .section-heading .eyebrow { color: #79934d; margin-bottom: 12px; }
-
-    h2 {
-      font-family: 'Playfair Display', serif;
-      color: var(--green-dark);
-      font-size: clamp(32px, 5vw, 47px);
-      margin-bottom: 16px;
-    }
-
-    .section-heading p { color: var(--muted); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 65px;
-    }
-
-    .about-image {
-  height: 460px;
-  border-radius: 24px;
-  background: url('assets/images/6300594887707006051.jpg') center/cover;
-  position: relative;
-}
-
-    .image-label {
-      position: absolute;
-      bottom: 22px;
-      left: 22px;
-      background: white;
-      padding: 16px 20px;
-      border-radius: 15px;
-      color: var(--green);
-      font-weight: 800;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      margin: 15px 0;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      margin-top: 25px;
-    }
-
-    .feature {
-      background: white;
-      padding: 17px;
-      border-radius: 14px;
-      font-weight: 700;
-      color: var(--green);
-      font-size: 14px;
-    }
-
-    .activities { background: #edf2e5; }
-
-    .activity-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .activity-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      transition: .3s;
-    }
-
-    .activity-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 15px 35px rgba(28,64,43,.12);
-    }
-
-    .activity-card img {
-      width: 100%;
-      height: 215px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .activity-info { padding: 23px; }
-
-    .activity-info h3 {
-      color: var(--green);
-      margin-bottom: 9px;
-      font-size: 19px;
-    }
-
-    .activity-info p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .experience-card {
-      padding: 30px;
-      border: 1px solid #e7eadf;
-      border-radius: 18px;
-      background: white;
-    }
-
-    .experience-icon {
-      font-size: 32px;
-      margin-bottom: 18px;
-    }
-
-    .experience-card h3 {
-      color: var(--green);
-      margin-bottom: 10px;
-    }
-
-    .experience-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .gallery { background: #f0f1e7; }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr;
-      grid-template-rows: 210px 210px;
-      gap: 15px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 17px;
-    }
-
-    .gallery-grid img:first-child { grid-row: span 2; }
-
-    .cta {
-      background: var(--green-dark);
-      color: white;
-      text-align: center;
-      padding: 85px 20px;
-    }
-
-    .cta h2 { color: white; max-width: 700px; margin: 0 auto 18px; }
-
-    .cta p {
-      color: #d4e1d5;
-      margin-bottom: 28px;
-    }
-
-    footer {
-      background: #0b2c1e;
-      color: white;
-      padding: 45px 0 25px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 35px;
-      padding-bottom: 35px;
-    }
-
-    footer p, footer a {
-      color: #c1d0c4;
-      font-size: 14px;
-    }
-
-    footer h3 { margin-bottom: 15px; }
-
-    footer a { display: block; margin: 8px 0; }
-
-    .copyright {
-      border-top: 1px solid rgba(255,255,255,.15);
-      padding-top: 20px;
-      text-align: center;
-      font-size: 12px;
-      color: #a8b9ac;
-    }
-
-    .whatsapp {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 20;
-      background: #20bd67;
-      color: white;
-      padding: 14px 20px;
-      border-radius: 50px;
-      font-size: 14px;
-      font-weight: 800;
-      box-shadow: 0 5px 20px rgba(0,0,0,.2);
-    }
-
-    @media (max-width: 800px) {
-      .nav-links { display: none; }
-      .hero { min-height: 680px; }
-      .about-grid { grid-template-columns: 1fr; gap: 35px; }
-      .about-image { height: 330px; }
-      .activity-grid, .experience-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 560px) {
-      section { padding: 70px 0; }
-      .activity-grid, .experience-grid { grid-template-columns: 1fr; }
-      .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 190px 150px 150px;
-      }
-      .gallery-grid img:first-child { grid-row: auto; grid-column: span 2; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .brand { font-size: 16px; }
-      .hero p { font-size: 15px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lontar Learning Adventure - wisata edukasi dan petualangan berbasis potensi lokal Desa Hendrosari, Gresik.">
+<meta name="theme-color" content="#174d35">
+<title>Lontar Learning Adventure | Lontar Sewu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--green:#174d35;--green-dark:#103b29;--lime:#d8ed9b;--cream:#f8f8ef;--text:#25372d;--muted:#718076;--white:#fff;--shadow:0 18px 45px rgba(20,55,37,.12)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:90px}body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--cream);line-height:1.65}img{display:block;max-width:100%}a{text-decoration:none;color:inherit}.container{width:min(1160px,90%);margin:auto}
+header{position:absolute;top:0;left:0;width:100%;z-index:10;padding:22px 0;color:white}nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:800;letter-spacing:-.5px}.brand-icon{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:var(--lime);color:var(--green);font-size:23px;flex:0 0 auto}.nav-links{display:flex;align-items:center;gap:27px;font-size:14px;font-weight:700}.nav-links a:hover{color:var(--lime)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 23px;border-radius:50px;font-weight:800;font-size:14px;transition:.25s;cursor:pointer;border:0}.btn-primary{background:var(--lime);color:var(--green-dark)}.btn-primary:hover{background:white;transform:translateY(-3px)}.btn-outline{border:1px solid rgba(255,255,255,.75);color:white}.btn-outline:hover{background:white;color:var(--green)}
+.hero{min-height:730px;display:flex;align-items:center;color:white;background:linear-gradient(90deg,rgba(10,39,26,.82),rgba(10,39,26,.24)),url('assets/images/6300594887707006050.jpg') center 48%/cover no-repeat;padding:150px 0 100px}.hero-content{max-width:700px}.eyebrow{display:inline-block;color:#d8ed9b;font-weight:800;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}h1,h2,h3{line-height:1.2}h1{font-family:'Playfair Display',serif;font-size:clamp(43px,7vw,76px);margin-bottom:22px}.hero p{max-width:590px;font-size:17px;color:#f1f5ed;margin-bottom:32px}.hero-buttons{display:flex;gap:13px;flex-wrap:wrap}
+section{padding:95px 0}.section-heading{max-width:680px;margin-bottom:43px}.section-heading .eyebrow{color:#79934d;margin-bottom:12px}h2{font-family:'Playfair Display',serif;color:var(--green-dark);font-size:clamp(32px,5vw,47px);margin-bottom:16px}.section-heading p{color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:65px}.about-image{min-height:460px;border-radius:24px;background:url('assets/images/6300594887707006051.jpg') center/cover no-repeat;position:relative;box-shadow:var(--shadow)}.image-label{position:absolute;bottom:22px;left:22px;background:white;padding:15px 20px;border-radius:15px;color:var(--green);font-weight:800}.about-text p{color:var(--muted);margin:15px 0}.features{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:25px}.feature{background:white;padding:16px;border-radius:14px;font-weight:800;color:var(--green);font-size:14px}
+.activities{background:#edf2e5}.activity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.activity-card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 8px 25px rgba(28,64,43,.06);transition:.3s}.activity-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}.activity-card img{width:100%;height:230px;object-fit:cover}.activity-info{padding:22px 23px 25px}.activity-info h3{color:var(--green);margin-bottom:9px;font-size:19px}.activity-info p{color:var(--muted);font-size:14px}
+.experience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.experience-card{padding:30px;border:1px solid #e7eadf;border-radius:18px;background:white}.experience-icon{font-size:32px;margin-bottom:18px}.experience-card h3{color:var(--green);margin-bottom:10px}.experience-card p{color:var(--muted);font-size:14px}
+.gallery{background:#f0f1e7}.gallery-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:220px 220px;gap:15px}.gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:17px}.gallery-grid img:first-child{grid-row:span 2}
+.cta{background:var(--green-dark);color:white;text-align:center;padding:88px 20px}.cta h2{color:white;max-width:760px;margin:0 auto 18px}.cta p{color:#d4e1d5;margin-bottom:28px}
+footer{background:#0b2c1e;color:white;padding:45px 0 25px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px;padding-bottom:35px}footer p,footer a{color:#c1d0c4;font-size:14px}footer h3{margin-bottom:15px}footer a{display:block;margin:8px 0}.copyright{border-top:1px solid rgba(255,255,255,.15);padding-top:20px;text-align:center;font-size:12px;color:#a8b9ac}
+@media(max-width:850px){.nav-links{gap:15px}.about-grid{grid-template-columns:1fr;gap:35px}.about-image{min-height:360px}.activity-grid{grid-template-columns:repeat(2,1fr)}.experience-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){header{padding:15px 0}.nav-links{display:none}.brand{font-size:14px}.brand-icon{width:39px;height:39px}.hero{min-height:690px;background-position:55% center}.hero p{font-size:15px}section{padding:70px 0}.activity-grid,.experience-grid{grid-template-columns:1fr}.activity-card img{height:240px}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:190px 150px 150px}.gallery-grid img:first-child{grid-row:auto;grid-column:span 2}.footer-grid{grid-template-columns:1fr}}
+</style>
 </head>
-
 <body>
-
-<header>
-  <div class="container">
-    <nav>
-      <a class="brand" href="#">
-        <span class="brand-icon">🌴</span>
-        <span>LONTAR LEARNING ADVENTURE</span>
-      </a>
-      <div class="nav-links">
-        <a href="#tentang">Tentang</a>
-        <a href="#aktivitas">Aktivitas</a>
-        <a href="#keunggulan">Keunggulan</a>
-        <a href="#galeri">Galeri</a>
-      </div>
-      <a class="btn btn-primary" href="#booking">Booking Sekarang</a>
-    </nav>
-  </div>
-</header>
-
+<header><div class="container"><nav>
+<a class="brand" href="#"><span class="brand-icon">🌴</span><span>LONTAR LEARNING ADVENTURE</span></a>
+<div class="nav-links"><a href="#tentang">Tentang</a><a href="#aktivitas">Aktivitas</a><a href="#keunggulan">Keunggulan</a><a href="#galeri">Galeri</a></div>
+<a class="btn btn-primary" href="#booking">Booking Sekarang</a>
+</nav></div></header>
 <main>
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <span class="eyebrow">Explore · Learn · Experience</span>
-        <h1>Belajar Seru,<br>Berpetualang Bersama Alam.</h1>
-        <p>
-          Temukan pengalaman wisata edukasi yang menyenangkan.
-          Mengenal budaya lokal, mengeksplorasi alam, dan menciptakan
-          kenangan berharga bersama Lontar Sewu.
-        </p>
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#booking">Rencanakan Kunjungan →</a>
-          <a class="btn btn-outline" href="#aktivitas">Jelajahi Aktivitas</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="tentang">
-    <div class="container about-grid">
-      <div class="about-image">
-        <div class="image-label">🌿 Nature Meets Learning</div>
-      </div>
-      <div class="about-text">
-        <span class="eyebrow">Welcome to Lontar Sewu</span>
-        <h2>Lebih dari Sekadar Wisata.</h2>
-        <p>
-          Lontar Learning Adventure merupakan pengalaman wisata edukasi
-          yang mengajak pengunjung belajar melalui aktivitas langsung,
-          mengenal potensi alam, serta kekayaan lokal Desa Hendrosari.
-        </p>
-        <p>
-          Kami percaya bahwa pengalaman terbaik tercipta ketika belajar,
-          bermain, dan menjelajahi lingkungan dilakukan bersama.
-        </p>
-        <div class="features">
-          <div class="feature">🌱 Edukasi Alam</div>
-          <div class="feature">🎨 Aktivitas Kreatif</div>
-          <div class="feature">🤝 Belajar Bersama</div>
-          <div class="feature">🌴 Kearifan Lokal</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="activities" id="aktivitas">
-    <div class="container">
-      <div class="section-heading">
-        <span class="eyebrow">Our Activities</span>
-        <h2>Pengalaman Seru untuk Dijelajahi.</h2>
-        <p>
-          Kenali berbagai aktivitas edukatif yang mengangkat kreativitas
-          dan potensi khas daerah.
-        </p>
-      </div>
-
-      <div class="activity-grid">
-        <article class="activity-card">
-          <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80" alt="Membuat ketupat">
-          <div class="activity-info">
-            <h3>Ketupat Daun Lontar</h3>
-            <p>Belajar menganyam daun lontar menjadi kerajinan tradisional.</p>
-          </div>
-        </article>
-
-        <article class="activity-card">
-          <img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=800&q=80" alt="Es tradisional">
-          <div class="activity-info">
-            <h3>Es Goyang Siwalan</h3>
-            <p>Mengenal proses pembuatan es tradisional yang menyegarkan.</p>
-          </div>
-        </article>
-
-        <article class="activity-card">
-          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Olahan bahan alami">
-          <div class="activity-info">
-            <h3>Simplisia Siwalan</h3>
-            <p>Mengenal pengolahan bahan alami menjadi produk sederhana.</p>
-          </div>
-        </article>
-
-        <article class="activity-card">
-          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80" alt="Dawet">
-          <div class="activity-info">
-            <h3>Dawet Siwalan</h3>
-            <p>Mencoba pengalaman membuat minuman tradisional khas lokal.</p>
-          </div>
-        </article>
-
-        <article class="activity-card">
-          <img src="https://images.unsplash.com/photo-1603905179139-d6a2c3c7e3b6?auto=format&fit=crop&w=800&q=80" alt="Briket">
-          <div class="activity-info">
-            <h3>Briket Siwalan</h3>
-            <p>Belajar mengenal pemanfaatan bahan dan energi alternatif.</p>
-          </div>
-        </article>
-
-        <article class="activity-card">
-          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80" alt="Es krim">
-          <div class="activity-info">
-            <h3>Es Krim Siwalan</h3>
-            <p>Mengolah bahan lokal menjadi sajian es krim yang menarik.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="keunggulan">
-    <div class="container">
-      <div class="section-heading">
-        <span class="eyebrow">Why Choose Us</span>
-        <h2>Petualangan yang Penuh Makna.</h2>
-        <p>
-          Setiap kunjungan menjadi kesempatan untuk mendapatkan
-          pengalaman baru dan belajar dengan cara yang menyenangkan.
-        </p>
-      </div>
-
-      <div class="experience-grid">
-        <div class="experience-card">
-          <div class="experience-icon">🌳</div>
-          <h3>Dekat dengan Alam</h3>
-          <p>Menikmati suasana lingkungan yang asri dan mengenal potensi alam sekitar.</p>
-        </div>
-        <div class="experience-card">
-          <div class="experience-icon">🧑‍🎓</div>
-          <h3>Belajar Praktik Langsung</h3>
-          <p>Pengalaman belajar melalui aktivitas yang melibatkan kreativitas dan keterampilan.</p>
-        </div>
-        <div class="experience-card">
-          <div class="experience-icon">👨‍👩‍👧‍👦</div>
-          <h3>Cocok untuk Rombongan</h3>
-          <p>Menjadi pilihan kegiatan edukasi dan kebersamaan untuk sekolah maupun komunitas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="gallery" id="galeri">
-    <div class="container">
-      <div class="section-heading">
-        <span class="eyebrow">Our Gallery</span>
-        <h2>Cerita Seru Dimulai di Sini.</h2>
-        <p>Beberapa gambaran suasana petualangan dan pengalaman wisata alam.</p>
-      </div>
-
-      <div class="gallery-grid">
-        <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=85" alt="Suasana alam">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85" alt="Wisata alam">
-        <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=800&q=85" alt="Pemandangan">
-        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=85" alt="Pemandangan alam">
-        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=85" alt="Hutan">
-      </div>
-    </div>
-  </section>
-
-  <section class="cta" id="booking">
-    <div class="container">
-      <span class="eyebrow">Let's Start Your Adventure</span>
-      <h2>Siap Menciptakan Pengalaman Belajar yang Berkesan?</h2>
-      <p>Rencanakan kunjungan sekolah, komunitas, atau keluarga bersama kami.</p>
-      <a class="btn btn-primary" href="GANTI_DENGAN_LINK_GOOGLE_FORM" target="_blank" rel="noopener">
-        Booking Kunjungan Sekarang →
-      </a>
-    </div>
-  </section>
+<section class="hero"><div class="container"><div class="hero-content">
+<span class="eyebrow">Explore · Learn · Experience</span><h1>Belajar Seru,<br>Berpetualang Bersama Alam.</h1>
+<p>Temukan pengalaman wisata edukasi yang menyenangkan. Mengenal budaya lokal, mengeksplorasi alam, dan menciptakan kenangan berharga bersama Lontar Sewu.</p>
+<div class="hero-buttons"><a class="btn btn-primary" href="#booking">Rencanakan Kunjungan →</a><a class="btn btn-outline" href="#aktivitas">Jelajahi Aktivitas</a></div>
+</div></div></section>
+<section id="tentang"><div class="container about-grid">
+<div class="about-image"><div class="image-label">🌿 Nature Meets Learning</div></div>
+<div class="about-text"><span class="eyebrow">Welcome to Lontar Sewu</span><h2>Lebih dari Sekadar Wisata.</h2>
+<p>Lontar Learning Adventure merupakan pengalaman wisata edukasi yang mengajak pengunjung belajar melalui aktivitas langsung, mengenal potensi alam, serta kekayaan lokal Desa Hendrosari.</p>
+<p>Kami percaya bahwa pengalaman terbaik tercipta ketika belajar, bermain, dan menjelajahi lingkungan dilakukan bersama.</p>
+<div class="features"><div class="feature">🌱 Edukasi Alam</div><div class="feature">🎨 Aktivitas Kreatif</div><div class="feature">🤝 Belajar Bersama</div><div class="feature">🌴 Kearifan Lokal</div></div>
+</div></div></section>
+<section class="activities" id="aktivitas"><div class="container">
+<div class="section-heading"><span class="eyebrow">Our Activities</span><h2>Belajar dari Alam, Berkarya dari Siwalan.</h2><p>Kenali potensi pohon siwalan melalui kegiatan edukatif dan kreatif yang dikemas menjadi pengalaman menyenangkan.</p></div>
+<div class="activity-grid">
+<article class="activity-card"><img src="assets/images/Ketupat%20Lontar.png" alt="Aktivitas membuat ketupat daun lontar" loading="lazy"><div class="activity-info"><h3>Ketupat Daun Lontar</h3><p>Mengenal keterampilan tradisional menganyam daun lontar menjadi bentuk ketupat.</p></div></article>
+<article class="activity-card"><img src="assets/images/Es%20Goyang%20Siwalan.png" alt="Es Goyang Siwalan" loading="lazy"><div class="activity-info"><h3>Es Goyang Siwalan</h3><p>Mengikuti proses pembuatan es tradisional dengan sentuhan bahan khas siwalan.</p></div></article>
+<article class="activity-card"><img src="assets/images/Simplisia%20Siwalan.png" alt="Simplisia kulit ari siwalan" loading="lazy"><div class="activity-info"><h3>Simplisia Kulit Ari Siwalan</h3><p>Mengenal proses pengolahan dan pengeringan kulit ari siwalan sebagai bahan simplisia.</p></div></article>
+<article class="activity-card"><img src="assets/images/Dawet%20Siwalan.png" alt="Dawet Siwalan" loading="lazy"><div class="activity-info"><h3>Dawet Siwalan</h3><p>Mengolah bahan lokal menjadi minuman tradisional yang segar dan nikmat.</p></div></article>
+<article class="activity-card"><img src="assets/images/Bricket%20Siwalan.png" alt="Briket Siwalan" loading="lazy"><div class="activity-info"><h3>Briket Siwalan</h3><p>Belajar mengenal pemanfaatan limbah dan potensi bahan lokal menjadi bahan bakar alternatif.</p></div></article>
+<article class="activity-card"><img src="assets/images/Es%20Krim%20Siwalan.png" alt="Es Krim Siwalan" loading="lazy"><div class="activity-info"><h3>Es Krim Siwalan</h3><p>Mengembangkan kreativitas mengolah siwalan menjadi sajian es krim yang menarik.</p></div></article>
+<article class="activity-card"><img src="assets/images/Sabun%20Siwalan.png" alt="Sabun Siwalan" loading="lazy"><div class="activity-info"><h3>Sabun Siwalan</h3><p>Mengenal proses pembuatan produk sabun dengan inspirasi bahan alami siwalan.</p></div></article>
+</div></div></section>
+<section id="keunggulan"><div class="container">
+<div class="section-heading"><span class="eyebrow">Why Choose Us</span><h2>Petualangan yang Penuh Makna.</h2><p>Setiap kunjungan menjadi kesempatan untuk mendapatkan pengalaman baru dan belajar dengan cara yang menyenangkan.</p></div>
+<div class="experience-grid">
+<div class="experience-card"><div class="experience-icon">🌳</div><h3>Dekat dengan Alam</h3><p>Menikmati suasana lingkungan yang asri dan mengenal potensi alam sekitar.</p></div>
+<div class="experience-card"><div class="experience-icon">🧑‍🎓</div><h3>Belajar Praktik Langsung</h3><p>Pengalaman belajar melalui aktivitas yang melibatkan kreativitas dan keterampilan.</p></div>
+<div class="experience-card"><div class="experience-icon">👨‍👩‍👧‍👦</div><h3>Cocok untuk Rombongan</h3><p>Menjadi pilihan kegiatan edukasi dan kebersamaan untuk sekolah maupun komunitas.</p></div>
+</div></div></section>
+<section class="gallery" id="galeri"><div class="container">
+<div class="section-heading"><span class="eyebrow">Our Gallery</span><h2>Potensi Lokal, Pengalaman Istimewa.</h2><p>Kenali suasana Lontar Sewu dan beragam hasil kreativitas berbasis siwalan.</p></div>
+<div class="gallery-grid">
+<img src="assets/images/6300594887707006051.jpg" alt="Gerbang Edu Wisata Lontar Sewu" loading="lazy">
+<img src="assets/images/Ketupat%20Lontar.png" alt="Ketupat daun lontar" loading="lazy">
+<img src="assets/images/Dawet%20Siwalan.png" alt="Dawet siwalan" loading="lazy">
+<img src="assets/images/Es%20Krim%20Siwalan.png" alt="Es krim siwalan" loading="lazy">
+<img src="assets/images/Sabun%20Siwalan.png" alt="Sabun siwalan" loading="lazy">
+</div></div></section>
+<section class="cta" id="booking"><div class="container"><span class="eyebrow">Let's Start Your Adventure</span><h2>Siap Menciptakan Pengalaman Belajar yang Berkesan?</h2><p>Rencanakan kunjungan sekolah, komunitas, atau keluarga bersama Lontar Learning Adventure.</p>
+<!-- Ganti URL berikut dengan tautan Google Form booking yang aktif -->
+<a class="btn btn-primary" href="GANTI_DENGAN_LINK_GOOGLE_FORM">Booking Kunjungan Sekarang →</a>
+</div></section>
 </main>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h3>🌴 Lontar Learning Adventure</h3>
-        <p>Wisata edukasi dan petualangan berbasis potensi alam serta kearifan lokal Desa Hendrosari, Gresik.</p>
-      </div>
-      <div>
-        <h3>Explore</h3>
-        <a href="#tentang">Tentang Kami</a>
-        <a href="#aktivitas">Aktivitas</a>
-        <a href="#galeri">Galeri</a>
-      </div>
-      <div>
-        <h3>Location</h3>
-        <p>Desa Hendrosari, Kecamatan Menganti, Kabupaten Gresik, Jawa Timur.</p>
-      </div>
-    </div>
-    <div class="copyright">
-      © 2026 Lontar Learning Adventure · Lontar Sewu. All Rights Reserved.
-    </div>
-  </div>
-</footer>
-
+<footer><div class="container"><div class="footer-grid">
+<div><h3>🌴 Lontar Learning Adventure</h3><p>Wisata edukasi dan petualangan berbasis potensi alam serta kearifan lokal Desa Hendrosari, Gresik.</p></div>
+<div><h3>Explore</h3><a href="#tentang">Tentang Kami</a><a href="#aktivitas">Aktivitas</a><a href="#galeri">Galeri</a></div>
+<div><h3>Location</h3><p>Desa Hendrosari, Kecamatan Menganti, Kabupaten Gresik, Jawa Timur.</p></div>
+</div><div class="copyright">© 2026 Lontar Learning Adventure · Lontar Sewu. All Rights Reserved.</div></div></footer>
 </body>
 </html>
-
