@@ -54,6 +54,20 @@ section{padding:70px 0}
 }
 .footer-grid{grid-template-columns:1fr}
 }
+
+.promo-banner{background:linear-gradient(135deg,#eaf1e4,#f8f8ef);padding:82px 0}
+.promo-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);align-items:center;gap:48px}
+.promo-poster-wrap{max-width:540px;margin:0 auto}
+.promo-poster{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 22px 55px rgba(20,55,37,.2)}
+.promo-copy .eyebrow{color:#79934d}
+.promo-copy h2{margin-bottom:18px}
+.promo-copy p{color:var(--muted);margin-bottom:24px}
+.promo-actions{display:flex;flex-wrap:wrap;gap:12px}
+.promo-actions .btn-whatsapp{background:#20bd67;color:white}
+.promo-note{display:block;margin-top:15px;color:var(--muted);font-size:12px}
+@media(max-width:850px){.promo-layout{grid-template-columns:1fr;gap:30px}.promo-poster-wrap{max-width:460px}.promo-copy{text-align:center}.promo-actions{justify-content:center}}
+@media(max-width:600px){.promo-banner{padding:62px 0}.promo-poster{border-radius:16px}.promo-layout{gap:25px}}
+
 </style>
 </head>
 <body>
@@ -105,6 +119,33 @@ section{padding:70px 0}
 <img src="assets/images/Flying%20fox.png" alt="Flying fox Lontar Sewu" loading="lazy">
 <img src="assets/images/FUN%20GAME.png" alt="Fun Game Lontar Sewu" loading="lazy">
 </div></div></section>
+
+<section class="promo-banner" id="promo">
+  <div class="container promo-layout">
+    <div class="promo-poster-wrap">
+      <img class="promo-poster" src="assets/images/Promo-Lontar-Sewu.png"
+           alt="Brosur promosi Edu Wisata Lontar Sewu dan Lontar Learning Adventure"
+           loading="lazy">
+    </div>
+    <div class="promo-copy">
+      <span class="eyebrow">Special Experience · Lontar Sewu</span>
+      <h2>Wujudkan Petualangan Belajar yang Seru!</h2>
+      <p>
+        Ajak sekolah, komunitas, dan keluarga menikmati pengalaman belajar,
+        bermain, serta berpetualang bersama Lontar Learning Adventure.
+        Pilih aktivitas favorit dan rencanakan kunjungan bersama kami.
+      </p>
+      <div class="promo-actions">
+        <a class="btn btn-primary" href="https://forms.gle/k3T55k81SsEFyBKLA"
+           target="_blank" rel="noopener noreferrer">Pesan Sekarang →</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/628385903781"
+           target="_blank" rel="noopener noreferrer">Chat WhatsApp</a>
+      </div>
+      <span class="promo-note">Klik Pesan Sekarang untuk mengisi formulir booking kunjungan.</span>
+    </div>
+  </div>
+</section>
+
 <section class="cta" id="booking"><div class="container"><span class="eyebrow">Let's Start Your Adventure</span><h2>Siap Menciptakan Pengalaman Belajar yang Berkesan?</h2><p>Rencanakan kunjungan sekolah, komunitas, atau keluarga bersama Lontar Learning Adventure.</p>
 <!-- Ganti URL berikut dengan tautan Google Form booking yang aktif -->
 <a class="btn btn-primary" href="https://forms.gle/k3T55k81SsEFyBKLA" target="_blank" rel="noopener noreferrer">Booking Kunjungan Sekarang →</a>
