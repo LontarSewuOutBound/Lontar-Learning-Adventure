@@ -106,6 +106,71 @@ section{padding:70px 0}
 .hero .promo-float{right:clamp(215px,24vw,340px);bottom:88px;z-index:4}
 @media(max-width:850px){.hero .promo-person{width:205px;right:0}.hero .promo-float{right:145px;bottom:60px}}
 @media(max-width:600px){.hero{min-height:760px;padding-bottom:225px}.hero .promo-person{width:160px;right:0;bottom:0}.hero .promo-float{right:130px;bottom:70px;padding:9px 10px;gap:7px}.hero .promo-float-icon{width:27px;height:27px;font-size:16px}.hero .promo-float-copy strong{font-size:12px}.hero .promo-float-copy span{font-size:7px;letter-spacing:.2px}.hero .promo-float-arrow{font-size:15px}}
+
+/* RESPONSIVE REFINEMENT: hero, promo badge, mascot and mobile header */
+@media (min-width: 851px) {
+  header .container nav { gap: 24px; }
+  .hero { min-height: 720px; padding: 145px 0 155px; }
+  .hero-content { position: relative; z-index: 1; max-width: min(650px, 58%); }
+  .hero .promo-person { width: clamp(190px, 19vw, 260px); right: 2.5%; bottom: 0; }
+  .hero .promo-float { right: clamp(220px, 23vw, 310px); bottom: 72px; }
+}
+@media (min-width: 601px) and (max-width: 850px) {
+  .hero { min-height: 760px; padding: 125px 0 190px; }
+  .hero-content { max-width: 76%; position: relative; z-index: 1; }
+  .hero h1 { font-size: clamp(46px, 7vw, 62px); }
+  .hero .promo-person { width: 190px; right: 0; bottom: 0; }
+  .hero .promo-float { right: 165px; bottom: 48px; }
+}
+@media (max-width: 600px) {
+  header { padding: 10px 0 !important; }
+  header .container nav {
+    display:flex; align-items:center; justify-content:space-between;
+    gap:8px; min-width:0;
+  }
+  .brand { display:flex; align-items:center; gap:8px; min-width:0; max-width:58%; }
+  .brand-icon { width:34px !important; height:34px !important; flex:0 0 34px; }
+  .brand span:last-child {
+    display:block; font-size:11px; line-height:1.2; letter-spacing:.1px;
+    max-width:145px; white-space:normal;
+  }
+  header .nav-booking, header .btn, header nav > a:last-child {
+    font-size:11px !important; line-height:1.2; padding:10px 12px !important;
+    white-space:normal; text-align:center; max-width:125px; border-radius:28px;
+  }
+  .hero {
+    min-height:790px; padding:105px 0 205px !important;
+    align-items:flex-start; background-position:56% center;
+  }
+  .hero-content { width:100%; max-width:100%; position:relative; z-index:1; }
+  .hero .eyebrow { font-size:10px; letter-spacing:1.7px; margin-bottom:15px; }
+  .hero h1 { font-size:clamp(39px, 10vw, 51px); line-height:1.13; margin-bottom:17px; }
+  .hero p { font-size:14px; line-height:1.65; max-width:100%; margin-bottom:23px; }
+  .hero-buttons { gap:10px; }
+  .hero-buttons .btn { font-size:12px; padding:12px 16px; }
+  .hero .promo-person {
+    width:clamp(118px, 34vw, 148px); right:0; bottom:0; z-index:3;
+  }
+  .hero .promo-float {
+    left:4%; right:auto; bottom:34px; width:min(65%, 255px);
+    min-height:58px; padding:9px 10px; gap:7px; border-radius:14px;
+    transform:rotate(-2deg); z-index:4;
+  }
+  .hero .promo-float-icon { width:29px; height:29px; font-size:16px; }
+  .hero .promo-float-copy { min-width:0; }
+  .hero .promo-float-copy strong { font-size:12px; letter-spacing:.3px; }
+  .hero .promo-float-copy span { font-size:7px; letter-spacing:0; line-height:1.25; }
+  .hero .promo-float-arrow { font-size:16px; margin-left:auto; }
+}
+@media (max-width:380px) {
+  .brand span:last-child { font-size:10px; max-width:112px; }
+  header .nav-booking, header .btn, header nav > a:last-child { max-width:108px; padding:9px 10px !important; }
+  .hero { min-height:820px; }
+  .hero h1 { font-size:38px; }
+  .hero .promo-person { width:116px; }
+  .hero .promo-float { width:64%; bottom:29px; }
+}
+
 </style>
 </head>
 <body>
