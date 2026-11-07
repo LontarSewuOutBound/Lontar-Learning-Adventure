@@ -171,6 +171,50 @@ section{padding:70px 0}
   .hero .promo-float { width:64%; bottom:18px; }
 }
 
+
+/* FINAL TUNING: larger promo guide and slightly higher promo badge */
+@media (min-width: 851px) {
+  .hero .promo-person {
+    width: clamp(245px, 24vw, 335px) !important;
+    right: 1.5% !important;
+    bottom: 0 !important;
+  }
+  .hero .promo-float {
+    right: clamp(270px, 28vw, 390px) !important;
+    bottom: 100px !important;
+  }
+}
+@media (min-width: 601px) and (max-width: 850px) {
+  .hero .promo-person {
+    width: 235px !important;
+    right: -5px !important;
+    bottom: 0 !important;
+  }
+  .hero .promo-float {
+    right: 185px !important;
+    bottom: 76px !important;
+  }
+}
+@media (max-width: 600px) {
+  .hero .promo-person {
+    width: clamp(165px, 43vw, 190px) !important;
+    right: -4px !important;
+    bottom: 0 !important;
+  }
+  .hero .promo-float {
+    bottom: 38px !important;
+  }
+}
+@media (max-width: 380px) {
+  .hero .promo-person {
+    width: 155px !important;
+    right: -3px !important;
+  }
+  .hero .promo-float {
+    bottom: 34px !important;
+  }
+}
+
 </style>
 </head>
 <body>
