@@ -23,7 +23,37 @@ section{padding:95px 0}.section-heading{max-width:680px;margin-bottom:43px}.sect
 .cta{background:var(--green-dark);color:white;text-align:center;padding:88px 20px}.cta h2{color:white;max-width:760px;margin:0 auto 18px}.cta p{color:#d4e1d5;margin-bottom:28px}
 footer{background:#0b2c1e;color:white;padding:45px 0 25px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px;padding-bottom:35px}footer p,footer a{color:#c1d0c4;font-size:14px}footer h3{margin-bottom:15px}footer a{display:block;margin:8px 0}.copyright{border-top:1px solid rgba(255,255,255,.15);padding-top:20px;text-align:center;font-size:12px;color:#a8b9ac}
 @media(max-width:850px){.nav-links{gap:15px}.about-grid{grid-template-columns:1fr;gap:35px}.about-image{min-height:360px}.activity-grid{grid-template-columns:repeat(2,1fr)}.experience-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){header{padding:15px 0}.nav-links{display:none}.brand{font-size:14px}.brand-icon{width:39px;height:39px}.hero{min-height:690px;background-position:55% center}.hero p{font-size:15px}section{padding:70px 0}.activity-grid,.experience-grid{grid-template-columns:1fr}.activity-card img{height:240px}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:190px 150px 150px}.gallery-grid img:first-child{grid-row:auto;grid-column:span 2}.footer-grid{grid-template-columns:1fr}}
+@media(max-width:600px){
+header{padding:15px 0}
+.nav-links{display:none}
+.brand{font-size:14px}
+.brand-icon{width:39px;height:39px}
+.hero{min-height:690px;background-position:55% center}
+.hero p{font-size:15px}
+section{padding:70px 0}
+.activity-grid,.experience-grid{grid-template-columns:1fr}
+.activity-card img{height:240px}
+.gallery{padding:62px 0}
+.gallery .section-heading{margin-bottom:28px}
+.gallery-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:none;
+  grid-auto-rows:auto;
+  gap:12px;
+}
+.gallery-grid img{
+  width:100%;
+  aspect-ratio:1 / 1;
+  height:auto;
+  object-fit:cover;
+  border-radius:15px;
+}
+.gallery-grid img:first-child{
+  grid-row:auto;
+  grid-column:auto;
+}
+.footer-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
